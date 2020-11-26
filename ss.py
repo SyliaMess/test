@@ -3,14 +3,14 @@ import pyodbc
 
 conn = pyodbc.connect('Driver={SQL Server};'
                       'Server=DESKTOP-BPRTOOF\SQLEXPRESS;'
-                      'Database=WideWorldImporters-Full;'
+                      'Database=Gestion_de_personnel;'
                       'Trusted_Connection=yes;')
 
 
 cursor = conn.cursor()
-cursor.execute("select * from Warehouse.StockItems;")
+cursor.execute("select * from Module;")
 for row in cursor:
     print(row)
     
-cursor.execute("INSERT INTO Module VALUES (('Pizza'),('15'),('20'),('10'));")
+cursor.execute("INSERT INTO Module VALUES (('deeplearning'),('3'),('2'),('1'));")
 conn.commit()
